@@ -7,11 +7,11 @@ class MicropostsController < ApplicationController
   	  flash[:success] = "Micropost created!"
   	  redirect_to root_path
   	else
-  	  @feed_items = current_user.feed.paginate(page: params[:page])
+  	  #@feed_items = current_user.feed.paginate(page: params[:page])
+      @feed_items = []
   	  render 'static_pages/home'
   	end
   end
-
   def destroy
   	@micropost.destroy
   	redirect_to root_path
